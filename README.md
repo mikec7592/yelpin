@@ -1,2 +1,2 @@
 # yelpin
-## A mock yelp app for practice
+## A mock yelp app for practicing react-native
