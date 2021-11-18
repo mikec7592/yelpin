@@ -7,6 +7,7 @@ import BusinessesList from '../components/BusinessesList';
 
 const SearchScreen = () => {
     const [term, setTerm] = useState('');
+    const [location, setLocation] = useState('');
     const [searchApi, businesses, errorMessage] = useBusinesses();
 
     const filterBusinessesByPrice = (price) => {
@@ -18,11 +19,13 @@ const SearchScreen = () => {
     return (
         <View style={styles.background}>
             
-            <LocationBar/>
+            <LocationBar location={location}
+            onTermChange={setLocation}
+            />
         
             <SearchBar term={term} 
             onTermChange={setTerm}
-            onTermSubmit={() => searchApi(term)}
+            onTermSubmit={() => searchApi(term, location)}
             />
             {errorMessage ? <Text>{errorMessage}</Text> : null}
             <ScrollView>
