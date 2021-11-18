@@ -20,7 +20,7 @@ const BusinessShowScreen = ({ navigation }) => {
 
 
     return (
-        <View>
+        <View style={styles.background}>
             <Text>{business.name}</Text>
             <FlatList
             data={business.photos}
@@ -37,6 +37,9 @@ const styles = StyleSheet.create({
     image: {
         height: 200,
         width: 300,
+    }, 
+    background: {
+        backgroundColor:'red',
     }
 });
 
